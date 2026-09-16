@@ -1,0 +1,8 @@
+source_type: csv
+path: content/calendario-editorial.csv
+columns:
+  dia: "Dia"
+  fase: "Fase"
+  formato: "Formato"
+  conteudo: "Conteúdo"
+  cta: "CTA"

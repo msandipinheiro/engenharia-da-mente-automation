@@ -1,0 +1,25 @@
+# Regras de marca — Engenharia da Mente / Mente Sob Medida
+paleta:
+  teal_principal: "#1F6F6B"
+  teal_escuro: "#134A47"
+  teal_claro: "#EAF5F4"
+  roxo_extensao_avancada: "#7B5EA7"
+
+fontes:
+  docx: "Calibri"
+  xlsx: "Arial"
+  imagens: "Arial ou Helvetica (fallback do sistema em matplotlib/PIL)"
+
+tom_de_voz:
+  - "Técnico + acolhedor — nunca capacitista, nunca promete cura"
+  - "Nunca culpabiliza o leitor pelas próprias dificuldades"
+  - "Evita jargão clínico não explicado no mesmo post"
+  - "Topo de funil (Reconhecimento) NUNCA exige autoidentificação com TDAH"
+
+disclaimers_obrigatorios:
+  autoteste: "Este autoteste é uma triagem de autopercepção, não um diagnóstico."
+
+publico:
+  - "Adultos com TDAH (produto principal: Mente Sob Medida)"
+  - "Pais/mães de crianças com TDAH (Bônus 3 / público secundário)"
+  - "Futuro: público geral (produto-irmão 'Rotina Sob Medida', não desenvolvido ainda)"
