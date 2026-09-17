@@ -1,18 +1,47 @@
 {
   "dia_calendario": 1,
   "data_publicacao": "2026-09-01",
-  "status": "publicado",
-  "legenda": "[RASCUNHO — preencher via Claude API] Reel \"Você não é preguiçoso\" + carrossel \"5 sinais de que seu cérebro funciona diferente\"",
-  "cta": "Seguir + salvar",
+  "status": "aprovado",
+  "legenda": "Você já ouviu (ou disse a si mesmo) que só precisa \"se esforçar mais\"? Talvez o que você chama de preguiça seja, na verdade, um cérebro que processa estímulos, tempo e prioridades de um jeito diferente do que a maioria dos ambientes espera. Isso não é falta de vontade — é uma forma diferente de funcionar. Entender como sua mente opera é o primeiro passo para parar de remar contra a própria maré. Nos próximos slides, alguns sinais que muita gente reconhece em si — sem rótulos, sem pressa. Deslize e veja o que faz sentido pra você.",
+  "cta": "Segue a gente pra continuar essa conversa e salva esse post pra reler quando precisar 💙",
+  "hashtags_sugeridas": [
+    "#EngenhariaDaMente",
+    "#MenteSobMedida",
+    "#FuncionamentoCerebral",
+    "#Neurodivergência",
+    "#SaúdeMental",
+    "#Autoconhecimento",
+    "#TDAH"
+  ],
+  "roteiro_reel": [
+    "Você não é preguiçoso.",
+    "Preguiça é não querer fazer algo.",
+    "Isso é diferente de querer muito... e o cérebro simplesmente não cooperar na hora.",
+    "Começar 10 tarefas e terminar nenhuma. Lembrar de tudo, menos do que importava agora. Sentir que o tempo escorre sem aviso.",
+    "Isso tem nome, tem explicação — e não é falta de esforço.",
+    "Talvez seu cérebro só funcione diferente do que te ensinaram a esperar dele.",
+    "Segue aqui pra gente continuar essa conversa."
+  ],
+  "slides_carrossel": [
+    "5 sinais de que seu cérebro pode funcionar diferente (capa)",
+    "1. Você começa várias tarefas e sente dificuldade real em concluí-las — mesmo quando quer muito terminar.",
+    "2. Sua noção de tempo parece 'elástica': ou perde horas sem perceber, ou se atrasa mesmo se esforçando pra não atrasar.",
+    "3. Precisa de urgência ou interesse genuíno pra conseguir focar — tarefas 'neutras' custam um esforço desproporcional.",
+    "4. Esquece compromissos, objetos ou informações importantes, mesmo repetindo mentalmente pra não esquecer.",
+    "5. Sente as coisas de forma intensa — frustração, entusiasmo, rejeição — e às vezes isso pega você de surpresa.",
+    "Nenhum desses sinais, sozinho, define nada. Mas juntos, podem contar uma história sobre como sua mente funciona. Segue e salva pra gente continuar essa conversa 💙"
+  ],
+  "alerta_se_fora_do_tom": "O carrossel lista sinais associados a TDAH sem mencionar o diagnóstico diretamente, o que respeita a regra de não exigir autoidentificação no topo de funil — mantive a linguagem em 'pode funcionar diferente' e sem rótulos fechados. Fiquei atento para não transformar a lista em autoteste; se em versões futuras isso for usado como triagem, incluir o disclaimer obrigatório de autoteste.",
   "formato": "Reel + Carrossel",
   "fase": "Aquecimento",
-  "midia": "queue/media/2026-09-01.png",
-  "midia_url": "https://raw.githubusercontent.com/msandipinheiro/engenharia-da-mente-automation/main/queue/media/2026-09-01.png",
-  "resultado_api": {
-    "post": {
-      "id": "6aab2e5b883b10a2a9bafda7",
-      "text": "[RASCUNHO — preencher via Claude API] Reel \"Você não é preguiçoso\" + carrossel \"5 sinais de que seu cérebro funciona diferente\"\n\nSeguir + salvar",
-      "dueAt": "2026-09-17T11:58:00.000Z"
-    }
-  }
+  "midia": [
+    "queue/media/2026-09-01-slide1.png",
+    "queue/media/2026-09-01-slide2.png",
+    "queue/media/2026-09-01-slide3.png",
+    "queue/media/2026-09-01-slide4.png",
+    "queue/media/2026-09-01-slide5.png",
+    "queue/media/2026-09-01-slide6.png",
+    "queue/media/2026-09-01-slide7.png",
+    "queue/media/2026-09-01-reel-prompt.txt"
+  ]
 }
