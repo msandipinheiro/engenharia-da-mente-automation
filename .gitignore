@@ -1,4 +1,4 @@
 .env
 __pycache__/
 *.pyc
-queue/media/*.png
+# queue/media/*.png
