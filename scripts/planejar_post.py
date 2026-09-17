@@ -8,10 +8,12 @@ import csv
 import json
 import os
 import yaml
+from dotenv import load_dotenv
 from datetime import date, timedelta
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+load_dotenv(ROOT / ".env")
 
 def carregar_brand():
     return yaml.safe_load((ROOT / "config" / "brand.yaml").read_text(encoding="utf-8"))
@@ -30,28 +32,67 @@ def data_real_do_dia(dia: int, data_ancora: date, dia_ancora: int) -> date:
     """
     return data_ancora + timedelta(days=dia - dia_ancora)
 
+SYSTEM_PROMPT_TEMPLATE = """Você é o redator da marca "Engenharia da Mente" (@engenhariadamente.oficial),
+responsável pela copy do produto Mente Sob Medida.
+
+REGRAS DE TOM DE VOZ (nunca quebre):
+{tom_de_voz}
+
+DISCLAIMERS OBRIGATÓRIOS quando o conteúdo mencionar o autoteste:
+{disclaimers}
+
+PÚBLICO:
+{publico}
+
+Responda SOMENTE com um JSON válido (sem markdown, sem texto fora do JSON), no formato:
+{{
+  "legenda": "<legenda para a publicação, pronta para postar>",
+  "cta": "<call to action final>",
+  "hashtags_sugeridas": ["#tag1", "#tag2", "..."],
+  "roteiro_reel": ["<texto na tela, corte 1>", "<corte 2>", "..."] ou null se o formato não incluir Reel,
+  "slides_carrossel": ["<texto do slide 1 - capa>", "<slide 2>", "..."] ou null se o formato não incluir Carrossel,
+  "alerta_se_fora_do_tom": "<qualquer risco de tom que você identificou, ou null>"
+}}
+"""
+
 def gerar_copy(brand: dict, linha_calendario: dict) -> dict:
-    """
-    TODO: chamar a API da Claude aqui, por exemplo:
+    """Chama a API da Claude para gerar a copy do dia, respeitando brand.yaml.
 
-        import anthropic
-        client = anthropic.Anthropic()
-        resp = client.messages.create(
-            model="claude-sonnet-4-6",
-            max_tokens=800,
-            system=f"Tom de voz: {brand['tom_de_voz']}. Nunca capacitista...",
-            messages=[{"role": "user", "content": f"Gere a legenda para: {linha_calendario}"}],
-        )
-
-    Por ora, devolve um placeholder para você testar o pipeline ponta a ponta
-    antes de plugar a chamada real.
+    Requer ANTHROPIC_API_KEY no ambiente (.env). Se a chamada falhar (sem
+    chave, sem rede, erro da API), levanta a exceção — de propósito: é
+    melhor o pipeline parar do que publicar um post sem copy real.
     """
-    return {
-        "legenda": f"[RASCUNHO — preencher via Claude API] {linha_calendario['Conteúdo']}",
-        "cta": linha_calendario["CTA"],
-        "formato": linha_calendario["Formato"],
-        "fase": linha_calendario["Fase"],
-    }
+    import anthropic
+
+    client = anthropic.Anthropic()  # lê ANTHROPIC_API_KEY do ambiente
+    system_prompt = SYSTEM_PROMPT_TEMPLATE.format(
+        tom_de_voz="\n".join(f"- {t}" for t in brand["tom_de_voz"]),
+        disclaimers="\n".join(f"- {k}: {v}" for k, v in brand.get("disclaimers_obrigatorios", {}).items()),
+        publico="\n".join(f"- {p}" for p in brand["publico"]),
+    )
+    user_prompt = (
+        f"Dia {linha_calendario.get('Dia')} do calendário editorial.\n"
+        f"Fase: {linha_calendario['Fase']}\n"
+        f"Formato: {linha_calendario['Formato']}\n"
+        f"Conteúdo planejado: {linha_calendario['Conteúdo']}\n"
+        f"CTA sugerido no calendário: {linha_calendario['CTA']}\n\n"
+        f"Gere a copy completa para este post, seguindo o JSON pedido no system prompt."
+    )
+
+    resp = client.messages.create(
+        model="claude-sonnet-5",
+        max_tokens=4000,
+        system=system_prompt,
+        messages=[{"role": "user", "content": user_prompt}],
+    )
+    text_blocks = [block.text for block in resp.content if getattr(block, "type", None) == "text"]
+    if not text_blocks:
+        raise RuntimeError("A resposta da Anthropic não contém um bloco de texto para converter em JSON.")
+    raw = "\n".join(text_blocks).strip()
+    dados = json.loads(raw)
+    dados["formato"] = linha_calendario["Formato"]
+    dados["fase"] = linha_calendario["Fase"]
+    return dados
 
 def main():
     parser = argparse.ArgumentParser()

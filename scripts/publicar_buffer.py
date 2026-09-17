@@ -71,7 +71,7 @@ def publicar(payload: dict) -> dict:
     is_instagram = str(channel.get("service", "")).lower() == "instagram"
     is_profile = str(channel.get("type", "")).lower() == "profile"
     scheduling_type = "notification" if is_instagram and is_profile else "automatic"
-    post_type = "carousel" if len(urls) > 1 else "post"
+    post_type = "post"
     metadata = {"instagram": {"type": post_type, "shouldShareToFeed": True}} if is_instagram else None
     query = """
     mutation CreatePost($channelId: ChannelId!, $text: String!, $assets: [AssetInput!]!, $schedulingType: SchedulingType!, $metadata: PostInputMetaData) {
