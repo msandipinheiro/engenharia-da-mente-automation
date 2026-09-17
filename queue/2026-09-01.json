@@ -1,10 +1,18 @@
 {
   "dia_calendario": 1,
   "data_publicacao": "2026-09-01",
-  "status": "aprovado",
+  "status": "publicado",
   "legenda": "[RASCUNHO — preencher via Claude API] Reel \"Você não é preguiçoso\" + carrossel \"5 sinais de que seu cérebro funciona diferente\"",
   "cta": "Seguir + salvar",
   "formato": "Reel + Carrossel",
   "fase": "Aquecimento",
-  "midia": "queue/media/2026-09-01.png"
+  "midia": "queue/media/2026-09-01.png",
+  "midia_url": "https://raw.githubusercontent.com/msandipinheiro/engenharia-da-mente-automation/main/queue/media/2026-09-01.png",
+  "resultado_api": {
+    "post": {
+      "id": "6aab2e5b883b10a2a9bafda7",
+      "text": "[RASCUNHO — preencher via Claude API] Reel \"Você não é preguiçoso\" + carrossel \"5 sinais de que seu cérebro funciona diferente\"\n\nSeguir + salvar",
+      "dueAt": "2026-09-17T11:58:00.000Z"
+    }
+  }
 }
