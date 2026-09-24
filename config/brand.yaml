@@ -23,3 +23,16 @@ publico:
   - "Adultos com TDAH (produto principal: Mente Sob Medida)"
   - "Pais/mães de crianças com TDAH (Bônus 3 / público secundário)"
   - "Futuro: público geral (produto-irmão 'Rotina Sob Medida', não desenvolvido ainda)"
+
+# --- identidade usada pelos scripts (planejar_post / gerar_midia) ---
+nome: "Engenharia da Mente"
+produto: "Mente Sob Medida"
+handle: "@engenhariadamente.oficial"
+icone_marca: "config/icone_marca.png"
+
+# papéis de cor nos slides gerados por scripts/gerar_midia.py
+cores_slide:
+  capa: "#1F6F6B"      # fundo da capa, círculo do número e bolinhas de progresso
+  fundo: "#EAF5F4"     # fundo dos slides internos
+  texto: "#134A47"     # texto dos slides internos e @handle no rodapé
+  destaque: "#EAF5F4"  # etiqueta "CARROSSEL" na capa

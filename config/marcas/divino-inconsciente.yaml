@@ -1,0 +1,44 @@
+# Regras de marca — DivinoInconsciente
+# Ponte simbólica entre os Orixás e a psicologia analítica (junguiana).
+# Base teórica real: arquétipos junguianos (inconsciente coletivo, sombra,
+# anima/animus, self) usados como LENTE para ler os Orixás simbolicamente.
+
+paleta:
+  roxo_profundo: "#3D2B56"
+  dourado: "#C9A24B"
+  branco_marfim: "#F5F0E6"
+  terracota: "#A85C32"
+
+fontes:
+  docx: "Calibri"
+  xlsx: "Arial"
+  imagens: "Arial ou Helvetica (fallback do sistema em matplotlib/PIL)"
+
+tom_de_voz:
+  - "Simbólico + respeitoso — nunca didático de forma fria, nunca caricato"
+  - "NUNCA afirma que Jung escreveu sobre Orixás — ele não escreveu; a conta usa a lente arquetípica SOBRE eles, isso é diferente e deve ficar claro"
+  - "Distingue sempre teologia/liturgia (Umbanda, Candomblé) de leitura simbólica/psicológica — quem não pratica a religião não pode sair achando que aprendeu a praticar"
+  - "Não prescreve ritual, oferenda ou prática religiosa como 'dica de autoconhecimento' — isso banaliza a religião"
+  - "Não promete resolver trauma ou substituir terapia"
+
+disclaimers_obrigatorios:
+  geral: "Este conteúdo é uma leitura simbólica e educativa — não é aconselhamento religioso, terapêutico ou substituto de acompanhamento profissional."
+
+publico:
+  - "Pessoas em processo de autoconhecimento/individuação, com ou sem vínculo com religiões afro-brasileiras"
+  - "Praticantes de Umbanda/Candomblé interessados numa leitura psicológica complementar à fé"
+  - "Curiosos de psicologia junguiana buscando símbolos fora do cânone europeu"
+
+handle: "@DivinoInconsciente"
+icone_marca: "config/marcas/assets/divino-inconsciente-icone.png"
+foto_perfil: "config/marcas/assets/divino-inconsciente-perfil.png"
+
+nome: "DivinoInconsciente"
+
+# papéis de cor nos slides gerados por scripts/gerar_midia.py
+# (segue a foto de perfil: roxo profundo com dourado)
+cores_slide:
+  capa: "#3D2B56"      # roxo_profundo — fundo da capa, círculo do número e bolinhas
+  fundo: "#F5F0E6"     # branco_marfim — fundo dos slides internos
+  texto: "#3D2B56"     # roxo_profundo — texto dos slides internos e @handle
+  destaque: "#C9A24B"  # dourado — etiqueta "CARROSSEL" na capa

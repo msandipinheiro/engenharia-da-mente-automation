@@ -1,0 +1,41 @@
+# Regras de marca — ViverEmFluxo
+# Bem-estar sem rigidez. Base teórica real: fluxo (Mihaly Csikszentmihalyi) —
+# imersão plena quando desafio e habilidade estão equilibrados.
+
+paleta:
+  verde_salvia: "#8CA88A"
+  bege_quente: "#EDE6D6"
+  verde_escuro: "#3E5C4A"
+  terracota_suave: "#C98863"
+
+fontes:
+  docx: "Calibri"
+  xlsx: "Arial"
+  imagens: "Arial ou Helvetica (fallback do sistema em matplotlib/PIL)"
+
+tom_de_voz:
+  - "Leve + direto — nunca prescritivo, nunca culpa quem 'não consegue relaxar'"
+  - "Leveza não é preguiça: a conta distingue sempre os dois, nunca romantiza inação"
+  - "Não usa linguagem de produtividade tóxica (hustle, 'não desista', otimização de tempo)"
+  - "Não promete cura de ansiedade, burnout ou qualquer condição clínica"
+
+disclaimers_obrigatorios:
+  geral: "Este conteúdo é educativo sobre bem-estar e não substitui acompanhamento psicológico ou médico."
+
+publico:
+  - "Pessoas saindo de ciclos de sobrecarga/rigidez autoimposta, sem diagnóstico específico"
+  - "Público que já passou por Engenharia da Mente ou DivinoInconsciente e busca 'manutenção leve' do que trabalhou"
+
+handle: "@ViverEmFluxo"
+icone_marca: "config/marcas/assets/viver-em-fluxo-icone.png"
+foto_perfil: "config/marcas/assets/viver-em-fluxo-perfil.png"
+
+nome: "ViverEmFluxo"
+
+# papéis de cor nos slides gerados por scripts/gerar_midia.py
+# (segue a foto de perfil: verde escuro com bege)
+cores_slide:
+  capa: "#3E5C4A"      # verde_escuro — fundo da capa, círculo do número e bolinhas
+  fundo: "#EDE6D6"     # bege_quente — fundo dos slides internos
+  texto: "#3E5C4A"     # verde_escuro — texto dos slides internos e @handle
+  destaque: "#EDE6D6"  # bege_quente — etiqueta "CARROSSEL" na capa
