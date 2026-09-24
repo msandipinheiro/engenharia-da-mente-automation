@@ -1,0 +1,90 @@
+# ===== Preparação (uma vez por máquina) =====
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+cp .env.example .env   # preencher as chaves (nunca comitar o .env)
+
+
+# ===== Engenharia da Mente (marca padrão — sem --marca) =====
+# Fila: queue/   Config: config/brand.yaml   Calendário: content/calendario-editorial.csv
+
+# Planejar copy
+python scripts/planejar_post.py \
+  --dia 1 \
+  --data-ancora 2026-09-01 \
+  --dia-ancora 1
+
+# Gerar Mídia
+python scripts/gerar_midia.py --data 2026-09-01
+
+# Listar e revisar a fila
+python scripts/fila_aprovacao.py --listar
+
+# Aprovar o post
+python scripts/fila_aprovacao.py --aprovar 2026-09-01
+
+# Publicar a mídia (commit + push) e atualizar PUBLIC_MEDIA_BASE_URL no .env — ver abaixo
+
+# Publicar via Buffer
+python scripts/publicar_buffer.py --data 2026-09-01
+
+# Verificar status final
+python scripts/fila_aprovacao.py --listar
+
+
+# ===== Outras marcas (--marca) =====
+# Marcas: divino-inconsciente | viver-em-fluxo
+# Fila: queue/<marca>/   Config: config/marcas/<marca>.yaml   Calendário: content/<marca>/calendario-editorial.csv
+# --data-ancora é OBRIGATÓRIO com --marca: é a data real do Dia 1 do calendário da marca
+
+# Planejar copy
+python scripts/planejar_post.py \
+  --marca divino-inconsciente \
+  --dia 1 \
+  --data-ancora 2026-10-01
+
+# Gerar Mídia
+python scripts/gerar_midia.py --marca divino-inconsciente --data 2026-10-01
+
+# Listar e revisar a fila
+python scripts/fila_aprovacao.py --marca divino-inconsciente --listar
+
+# Aprovar o post
+python scripts/fila_aprovacao.py --marca divino-inconsciente --aprovar 2026-10-01
+
+# Publicar via Buffer (usa BUFFER_CHANNEL_ID_DIVINO_INCONSCIENTE do .env)
+python scripts/publicar_buffer.py --marca divino-inconsciente --data 2026-10-01
+
+# Verificar status final
+python scripts/fila_aprovacao.py --marca divino-inconsciente --listar
+
+# (mesmos comandos para viver-em-fluxo, trocando o --marca;
+#  canal: BUFFER_CHANNEL_ID_VIVER_EM_FLUXO)
+
+
+# ===== Conteúdo avulso (fora do calendário) =====
+# Arquivo: queue/[<marca>/]avulso-AAAA-MM-DD.json, com "tipo": "avulso", "dia_calendario": null e um "id"
+python scripts/gerar_midia.py --data educacao-preguica
+python scripts/fila_aprovacao.py --aprovar educacao-preguica
+python scripts/publicar_buffer.py --data educacao-preguica
+# Obs.: post só de Reel não tem imagem (só o prompt .txt) — o Buffer recusa;
+#       o vídeo precisa ser gerado na ferramenta de IA e publicado à parte.
+
+
+# ===== Publicar a mídia antes do Buffer =====
+# O Buffer baixa as imagens por PUBLIC_MEDIA_BASE_URL + caminho do arquivo.
+git add queue/
+git commit -m "Mídia do post <data>"
+git push origin main
+git rev-parse --short HEAD   # copiar o hash para o .env:
+# PUBLIC_MEDIA_BASE_URL=https://raw.githubusercontent.com/msandipinheiro/engenharia-da-mente-automation/<hash>
+
+
+# ===== Rota B — Instagram Graph API (alternativa ao Buffer) =====
+python scripts/publicar_graph_api.py --data 2026-09-01
+python scripts/publicar_graph_api.py --marca viver-em-fluxo --data 2026-10-01
+# usa IG_BUSINESS_ACCOUNT_ID[_<MARCA>] e META_ACCESS_TOKEN[_<MARCA>] do .env
+
+
+# ===== Hotmart: verificação das informações e status dos produtos =====
+python scripts/verificar_produto_hotmart.py --produto-id <id-do-seu-produto>
