@@ -1,0 +1,26 @@
+PROMPT PARA FERRAMENTA DE VÍDEO POR IA (Reel — @engenhariadamente.oficial)
+==========================================================================
+
+Formato: vertical 9:16, 15-30 segundos, estilo Reel/TikTok.
+Estética: minimalista, fundo em tons de teal (#1F6F6B / #134A47) com texto branco ou #134A47 sobre fundo #EAF5F4, tipografia bold sem serifa, sem elementos decorativos ou mascotes — tom editorial, não infantilizado.
+
+Tom: Técnico + acolhedor — nunca capacitista, nunca promete cura; Nunca culpabiliza o leitor pelas próprias dificuldades
+
+Estrutura (um corte de texto por cena, ritmo rápido, ~3-5s por corte):
+1. Você não é preguiçoso.
+2. Preguiça é não querer fazer algo.
+3. Isso é diferente de querer muito... e o cérebro simplesmente não cooperar na hora.
+4. Começar 10 tarefas e terminar nenhuma. Lembrar de tudo, menos do que importava agora. Sentir que o tempo escorre sem aviso.
+5. Isso tem nome, tem explicação — e não é falta de esforço.
+6. Talvez seu cérebro só funcione diferente do que te ensinaram a esperar dele.
+7. Segue aqui pra gente continuar essa conversa.
+
+Instruções à ferramenta de IA:
+- Cada linha acima é uma cena com o texto centralizado na tela.
+- Sem voz/narração — é um Reel de texto animado (estilo "quote reel").
+- Sem rostos, sem imagens de banco de imagem genéricas.
+- Última cena deve durar mais (~4-5s) para dar tempo de leitura do CTA.
+- Música: instrumental leve, sem letra, volume baixo (não deve competir com a leitura).
+
+Legenda (para colar junto do vídeo na publicação):
+Você já ouviu (ou disse a si mesmo) que só precisa "se esforçar mais"? Talvez o que você chama de preguiça seja, na verdade, um cérebro que processa estímulos, tempo e prioridades de um jeito diferente do que a maioria dos ambientes espera. Isso não é falta de vontade — é uma forma diferente de funcionar. Entender como sua mente opera é o primeiro passo para parar de remar contra a própria maré. Nos próximos slides, alguns sinais que muita gente reconhece em si — sem rótulos, sem pressa. Deslize e veja o que faz sentido pra você.

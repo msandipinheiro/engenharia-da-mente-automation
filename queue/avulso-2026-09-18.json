@@ -1,0 +1,21 @@
+{
+  "id": "educacao-preguica",
+  "tipo": "avulso",
+  "dia_calendario": null,
+  "data_publicacao": "2026-09-18",
+  "status": "pronto_para_aprovacao",
+  "fase": "Educação (avulso, fora da sequência de 21 dias)",
+  "formato": "Reel",
+  "legenda": "\"Preguiça\" é a explicação mais fácil que a gente dá pra si mesmo quando trava numa tarefa que até queria fazer. Mas travar no meio de algo que você genuinamente quer terminar não é falta de vontade — é outra coisa. Nos próximos dias eu vou te mostrar o que é, de verdade. Segue pra não perder.",
+  "cta": "Segue para acompanhar os próximos posts.",
+  "roteiro_reel": [
+    "Você já ouviu isso de si mesmo: 'eu sou preguiçoso'?",
+    "E se o problema nunca foi vontade — e sim que ninguém te deu o primeiro passo certo?",
+    "Preguiça não trava você no meio de uma tarefa que você QUER fazer.",
+    "Isso tem nome, e não é falta de caráter.",
+    "Segue aqui — os próximos posts vão te mostrar exatamente o que é."
+  ],
+  "midia": [
+    "queue/media/2026-09-18-reel-prompt.txt"
+  ]
+}
